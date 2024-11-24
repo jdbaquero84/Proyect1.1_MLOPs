@@ -1,9 +1,9 @@
 # Proyecto MVP para Plataforma de Videojuegos
 
 <div align="center">
-    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show1.jpg" alt="Descripción de la Imagen 1" width="200"/>
-    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show2.png" alt="Descripción de la Imagen 2" width="200"/>
-    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show3.jpg" alt="Descripción de la Imagen 3" width="200"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show1.jpg" alt="Descripción de la Imagen 1" width="300"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show2.png" alt="Descripción de la Imagen 2" width="300"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show3.jpg" alt="Descripción de la Imagen 3" width="300"/>
 </div>
 
 ## Resumen
@@ -29,8 +29,8 @@ donde:
 
 La similitud del coseno proporciona un valor entre -1 y 1, donde 1 indica que los productos son idénticos, 0 indica que no tienen similitudes y -1 indica que son completamente opuestos. Esta técnica es muy útil para recomendaciones porque toma en cuenta la dirección de los vectores y no la magnitud, lo que la hace robusta a diferentes escalas de datos.
 
-    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen1.png" alt="Descripción de la Imagen 2" width="200"/>
-    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen2.jpg" alt="Descripción de la Imagen 3" width="200"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen1.png" alt="Descripción de la Imagen 2" width="300"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen2.jpg" alt="Descripción de la Imagen 3" width="300"/>
 ## Funcionalidades del API
 
 Las consultas que se pueden realizar a través de la API son las siguientes:
