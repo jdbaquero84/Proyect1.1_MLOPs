@@ -1,57 +1,61 @@
-# PI_MLOPs
-![Imagen1](imagen1.png)
+# Proyecto MVP para Plataforma de Videojuegos
+
+<div align="center">
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show1.jpg" alt="Descripción de la Imagen 1" width="200"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show2.png" alt="Descripción de la Imagen 2" width="200"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/show3.jpg" alt="Descripción de la Imagen 3" width="200"/>
+</div>
 
 ## Resumen
-En este proyecto se ejecuta un MPV (Minimum Viable Product) con una base de datos de la empresa de videojuegos. El primer paso realizado consistió en el proceso de extracción, transformación y carga (ETL), seguido del análisis exploratorio (EDA) con el objetivo de tener datasets más compactos y livianos. Estos son compatibles con Render, una plataforma de computación en la nube que permite lanzar y escalar aplicaciones web, APIs y más de manera rápida y sencilla, facilitando la implementación y mantenimiento de proyectos sin necesidad de gestionar servidores físicos.
 
-También se presenta un sistema de recomendación usando el modelo de similitud del coseno, que mide la similitud entre dos vectores calculando el coseno del ángulo entre ellos.
+Se trata de un MVP (Producto Mínimo Viable) usando bases de datos de una plataforma de videojuegos, con sus análisis exploratorios de datos (EDA) y procesos de extracción, transformación y carga (ETL) respectivos. Usando Render, se implementaron 5 endpoints y un sistema de recomendación basado en la similitud del coseno. El objetivo principal fue entregar una API que permite realizar diversas consultas sobre los datos de la plataforma de videojuegos.
 
 ## Objetivo
-Generar una API (MPV) que permita realizar consultas específicas, acorde a los endpoints requeridos e incluir un sistema de recomendación usando el modelo de similitud del coseno.
 
-## Desarrollo (ETL-EDA)
-Se cuenta con tres archivos en formato JSON que presentan datos anidados y un tamaño robusto. Para esto, se despliega el código correspondiente para poder resumirlos. La descripción del procedimiento junto con el código se encuentra detallada en los cuadernos Jupyter.
+El objetivo de este proyecto es proporcionar una API funcional y eficiente que permita realizar consultas detalladas sobre los datos de videojuegos, utilizando un modelo de recomendación basado en la similitud del coseno. Esta herramienta busca facilitar el acceso a información clave para usuarios y desarrolladores, mejorando la toma de decisiones y la experiencia del usuario.
 
-## Sistema de recomendación
-Se implementa con el modelo de similitud del coseno, que es muy usado para calcular la similitud entre textos, lo que aplica, por ejemplo, a: películas, libros y, por supuesto, a juegos.
+## Similitud del Coseno
 
-Este modelo presenta a los usuarios como vectores en un espacio multidimensional. Cada dimensión representa un atributo del usuario (variable). El procedimiento consiste en calcular el coseno del ángulo entre vectores (usuarios).
+La similitud del coseno es una métrica utilizada para medir la similitud entre dos vectores en un espacio multidimensional. En el contexto de los sistemas de recomendación, se utiliza para comparar la similitud entre productos (en este caso, videojuegos) basándose en sus características. La fórmula de la similitud del coseno es:
 
-Se utilizó el dataset data. El sistema recomienda teniendo en cuenta el nombre del juego, el género y los tags. Es un sistema de recomendación de tipo filtro basado en contenido, donde se recomienda un artículo similar al que ve el usuario.
+$$
+\text{Similitud del Coseno} = \frac{\vec{A} \cdot \vec{B}}{\|\vec{A}\| \|\vec{B}\|}
+$$
 
-![Imagen2](imagen2.jpg)
+donde:
+- \(\vec{A}\) y \(\vec{B}\) son los vectores de características de los dos productos a comparar.
+- \(\vec{A} \cdot \vec{B}\) es el producto punto de los vectores.
+- \(\|\vec{A}\|\) y \(\|\vec{B}\|\) son las magnitudes de los vectores.
 
-## Endpoints
-```python
-def developer(desarrollador: str):
-    # Cantidad de items y porcentaje de contenido Free por año según empresa desarrolladora.
+La similitud del coseno proporciona un valor entre -1 y 1, donde 1 indica que los productos son idénticos, 0 indica que no tienen similitudes y -1 indica que son completamente opuestos. Esta técnica es muy útil para recomendaciones porque toma en cuenta la dirección de los vectores y no la magnitud, lo que la hace robusta a diferentes escalas de datos.
 
-def userdata(User_id: str):
-    # Debe devolver cantidad de dinero gastado por el usuario, el porcentaje de recomendación en base a reviews.recommend y cantidad de ítems.
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen1.png" alt="Descripción de la Imagen 2" width="200"/>
+    <img src="https://github.com/jdbaquero84/Proyect1.1_MLOPs/blob/master/imagen2.jpg" alt="Descripción de la Imagen 3" width="200"/>
+## Funcionalidades del API
 
-def UserForGenre(genero: str):
-    # Debe devolver el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.
+Las consultas que se pueden realizar a través de la API son las siguientes:
 
-def best_developer_year(año: int):
-    # Devuelve el top 3 de desarrolladores con juegos MÁS recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos)
+1. **Cantidad de productos gratis por año y por empresa desarrolladora**:
+   - Permite obtener el número de productos gratuitos lanzados por año y la empresa que los desarrolló.
 
-def developer_reviews_analysis(desarrolladora: str):
-    # Según el desarrollador, se devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor positivo o negativo.
+2. **Cantidad de dinero gastada por el usuario, porcentaje de recomendación en las opiniones y número de items**:
+   - Proporciona información sobre el gasto total del usuario, el porcentaje de recomendación basado en las opiniones de los usuarios y el número total de items.
 
-def recomendacion_juego(id_de_producto):
-    # Ingresando el id de producto, deberíamos recibir una lista con 5 juegos recomendados similares al ingresado.
+3. **Top 3 de desarrolladores con juegos más recomendados por año**:
+   - Devuelve los tres desarrolladores con los juegos más recomendados cada año.
 
-## Recursos utilizados
-Python con las siguientes librerías:
-[FastAPI](https://fastapi.tiangolo.com/)
-[Uvicorn](https://www.uvicorn.org/)
-[Pandas](https://pandas.pydata.org/)
-[Numpy](https://numpy.org/)
-[Apache Arrow](https://arrow.apache.org/docs/python/index.html)
-[Scikit-learn](https://scikit-learn.org/stable/)
-[AST](https://docs.python.org/es/3.12/library/ast.html)
-[TextBlob](https://textblob.readthedocs.io/en/dev/)
+4. **Diccionario de reseñas de usuarios por desarrollador**:
+   - Según el desarrollador, se devuelve un diccionario con el nombre del desarrollador como llave y una lista con la cantidad total de registros de reseñas de usuarios categorizados como positivos o negativos.
 
-## Render
-El despliegue se realizó en Render en la capa gratuita con 512 MB de memoria RAM y 0.1 CPU según su [web-site](https://render.com/pricing).
+5. **Sistema de recomendación**:
+   - Ingresando el ID de un producto, se recibe una lista con 5 juegos recomendados similares al ingresado, basado en la similitud del coseno.
+
+## Implementación
+
+La implementación del proyecto incluye los siguientes componentes:
+- **EDA (Análisis Exploratorio de Datos)**: Procesos y técnicas utilizadas para analizar y resumir los datos de la plataforma de videojuegos.
+- **ETL (Extracción, Transformación y Carga)**: Procesos de manejo de datos para preparar la información necesaria para el análisis y la implementación del modelo.
+- **Render**: Utilizado para desplegar y manejar los endpoints de la API.
+
+[Ver fastAPI aquí](https://proyect1-1-mlops.onrender.com/docs#/)
 
