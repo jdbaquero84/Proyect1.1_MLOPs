@@ -10,6 +10,19 @@
 
 Se trata de un MVP (Producto Mínimo Viable) usando bases de datos de una plataforma de videojuegos, con sus análisis exploratorios de datos (EDA) y procesos de extracción, transformación y carga (ETL) respectivos. Usando Render, se implementaron 5 endpoints y un sistema de recomendación basado en la similitud del coseno. El objetivo principal fue entregar una API que permite realizar diversas consultas sobre los datos de la plataforma de videojuegos.
 
+## Tecnologías Utilizadas
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=seaborn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+
 ## Objetivo
 
 El objetivo de este proyecto es proporcionar una API funcional y eficiente que permita realizar consultas detalladas sobre los datos de videojuegos, utilizando un modelo de recomendación basado en la similitud del coseno. Esta herramienta busca facilitar el acceso a información clave para usuarios y desarrolladores, mejorando la toma de decisiones y la experiencia del usuario.
